@@ -3,7 +3,7 @@ package player;
 import boundaryToMatador.GUI;
 
 public class Game {
-
+TUI tui = new TUI();
 	public Game() {
 
 	}
@@ -19,7 +19,7 @@ GUI.create("Fields1.txt");
 		Dicecup diceCup = new Dicecup();
 		Chance chance = new Chance(); 
 		
-		TUI tui = new TUI();
+		
 
 		// sp�rger om hvor mange spillere, der skal være med
 		int a = GUI.getUserInteger(tui.numberOfPlayers(), 2, 6);
@@ -99,7 +99,7 @@ GUI.create("Fields1.txt");
 			Account player_Account = new Account(30000);
 
 			Player Player = new Player(
-					GUI.getUserString("Please enter your name"),
+					GUI.getUserString(tui.enterName()),
 					player_Account, 0);
 			player[i] = Player;
 			GUI.addPlayer(player[i].getPlayerName(), player[i].getPlayerAcc()

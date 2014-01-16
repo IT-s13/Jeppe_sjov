@@ -9,6 +9,7 @@ public class Jail extends Field {
 	Dicecup diceCup = new Dicecup();
 
 	public Jail() {
+		
 
 	}
 
@@ -21,9 +22,9 @@ public class Jail extends Field {
 
 		if (player.getJailcount() < 3 && prison == true) {
 
-			if (GUI.getUserLeftButtonPressed(tui.PayorRoll(), " betal 1000",
-					"Roll dice") == true) {
-				GUI.showMessage("du har betalt 1000 og kan rykke videre i næste tur");
+			if (GUI.getUserLeftButtonPressed(tui.PayorRoll(), tui.jailBetal(),
+					tui.rollDice(player.getPlayerName())) == true) {
+				GUI.showMessage(tui.jailBetal());
 				player.getPlayerAcc().changeBalance(-bailamount);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 						.getBalance());
@@ -31,24 +32,24 @@ public class Jail extends Field {
 				player.setJailstate(false);
 			} else {
 				for (int i = 0; i <= 3; i++) {
-					GUI.getUserButtonPressed(" ", "roll dice");
+					GUI.getUserButtonPressed(" ", tui.rollDice(player.getPlayerName()));
 					diceCup.roll();
 					if (diceCup.getfacevalue1() == diceCup.getfacevalue2()) {
 						player.setJailstate(false);
 						player.restartjailcount();
 						i = 4;
 						GUI.getUserButtonPressed(
-								"du slog 2 ens og kan rykke videre i næste runde",
-								"ok");
+								tui.slogToEns(),
+								tui.ok());
 					} else {
 						player.updatejailcount();
 						if (i == 3) {
 							GUI.getUserButtonPressed(
-									"du slog ikke 2 ens men har slået 3 gange,du må prøve igen i næste runde",
-									"ok");
+									tui.slogikkeToEns(),
+									tui.ok());
 						} else {
 							GUI.getUserButtonPressed(
-									"du slog ikke 2 ens du må prøve igen", "ok");
+									tui.prøvigen(), tui.ok());
 						}
 					}
 

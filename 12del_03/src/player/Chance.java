@@ -9,63 +9,63 @@ public class Chance extends Field {
 	private Chancecard[] chancecards = new Chancecard[arrayLength];
 
 	public Chance() {
-		
+		TUI tui = new TUI();
 		//betal penge chance kort
-		Chancecard chance1 = new Chancecard(-200,"du har smuglet smøger betal 200",1);
-		Chancecard chance2 = new Chancecard(-3000,"betal kr. 3.000 for reparation af Deres vogn",1);
-		Chancecard chance3 = new Chancecard(-3000,"betal kr. 3.000 for reparation af Deres vogn",1);
-		Chancecard chance4 = new Chancecard(-2000,"De har modtaget Deres tandlægeregning. Betal 2.000",1);
-		Chancecard chance5 = new Chancecard(-200,"De har fået en parkeringsbøde betal kr. 200 i bøde",1);
-		Chancecard chance6 = new Chancecard(-200,"Betal kr.200 for levering af 2 kasser øl",1);
-		Chancecard chance7 = new Chancecard(-1000,"Betal deres bilforsikring - kr. 1.000",1);
-		Chancecard chance8 = new Chancecard(-300,"Betal for vognvask og smøring kr.300",1);
-		Chancecard chance9 = new Chancecard(-1000,"De har købt 4 nye dæk til Deres vogn. Betal kr.1.000",1);
-		Chancecard chance10 = new Chancecard(-1000,"De har kørt frem for Fuldt stop. Betal kr. 1.000 i bøde",1);
+		Chancecard chance1 = new Chancecard(-200,tui.chance1(),1);
+		Chancecard chance2 = new Chancecard(-3000,tui.chance2(),1);
+		Chancecard chance3 = new Chancecard(-3000,tui.chance3(),1);
+		Chancecard chance4 = new Chancecard(-2000,tui.chance4(),1);
+		Chancecard chance5 = new Chancecard(-200,tui.chance5(),1);
+		Chancecard chance6 = new Chancecard(-200,tui.chance6(),1);
+		Chancecard chance7 = new Chancecard(-1000,tui.chance7(),1);
+		Chancecard chance8 = new Chancecard(-300,tui.chance8(),1);
+		Chancecard chance9 = new Chancecard(-1000,tui.chance9(),1);
+		Chancecard chance10 = new Chancecard(-1000,tui.chance10(),1);
 		
 
 		// modtag penge chance kort
-		Chancecard chance11 = new Chancecard(1000,"Mod udbytte af deres aktier. 1.000kr",1);
-		Chancecard chance12 = new Chancecard(500,"De har vundet i klasselotteriet. Modtag kr. 500.",1);	
-		Chancecard chance13 = new Chancecard(3000,"Kommunen har eftergivet et kvartals skat. Hæv i banken kr. 3.000",1);	
-		Chancecard chance14 = new Chancecard(1000,"De modtager deres aktieudbytte. Modtag kr. 1.000 af banken",1);	
-		Chancecard chance15 = new Chancecard(1000,"De modtager deres aktieudbytte. Modtag kr. 1.000 af banken",1);
-		Chancecard chance16 = new Chancecard(1000,"Grundet dyrtiden har de fået gageforhøjelse Modtag kr. 1.000",1);	
-		Chancecard chance17 = new Chancecard(1000,"De havde en række med elleve rigtige i tipning. Modtag kr. 1.000",1);	
-		Chancecard chance18 = new Chancecard(1000,"De har solgt nogle gamle møbler på auktion modtag kr. 1.000 af banken",1);	
-		Chancecard chance19 = new Chancecard(1000,"Deres præmieobligation er udtrukket. De modtager kr. 1.000 af banken",1);	
-		Chancecard chance20 = new Chancecard(500,"De har vundet i Klasselotteriet. Modtag kr.500",1);	
-		Chancecard chance21 = new Chancecard(200,"Vædien af egen avl fra nyttehaven udgø kr. 200,som de modtager af banken",1);	
-		Chancecard chance22 = new Chancecard(1000,"Deres præmieobligation er udtrukket. De modtager kr. 1.000 af banken",1);
+		Chancecard chance11 = new Chancecard(1000,tui.chance11(),1);
+		Chancecard chance12 = new Chancecard(500,tui.chance12(),1);	
+		Chancecard chance13 = new Chancecard(3000,tui.chance13(),1);	
+		Chancecard chance14 = new Chancecard(1000,tui.chance14(),1);	
+		Chancecard chance15 = new Chancecard(1000,tui.chance15(),1);
+		Chancecard chance16 = new Chancecard(1000,tui.chance16(),1);	
+		Chancecard chance17 = new Chancecard(1000,tui.chance17(),1);	
+		Chancecard chance18 = new Chancecard(1000,tui.chance18(),1);	
+		Chancecard chance19 = new Chancecard(1000,tui.chance19(),1);	
+		Chancecard chance20 = new Chancecard(500,tui.chance20(),1);	
+		Chancecard chance21 = new Chancecard(200,tui.chance21(),1);	
+		Chancecard chance22 = new Chancecard(1000,tui.chance22(),1);
 		
 		
 		// ryk frem til et bestemt felt chance kort 
 		
-		Chancecard chance23 = new Chancecard(6,"Tag med Øresundsbåden, hvis de passerer start indkasserer de kr.4.000",2);
-		Chancecard chance24 = new Chancecard(31,"Gå i fængsel. Ryk direkte til fængslet, de får ikke penge selvom de passerer start indkasserer de ikke kr.4.000",5);
-		Chancecard chance25 = new Chancecard(31,"Gå i fængsel. Ryk direkte til fængslet, de får ikke penge selvom de passerer start indkasserer de ikke kr.4.000",5);
-		Chancecard chance26 = new Chancecard(40,"tag ind på rådhuspladsen",2);
-		Chancecard chance27 = new Chancecard(20,"ryk frem til strandveje, modtag kr.4.000 hvis de passerer start",2); 
-		Chancecard chance28 = new Chancecard(25,"Ryk frem til Grønningen. Hvis de passerer ”START” indkassér da kr. 4.000.",2);
-		Chancecard chance29 = new Chancecard(33,"Ryk frem til Vimmelskaftet Hvis de passerer ”START” indkassér da kr.4.000.",2);
-		Chancecard chance30 = new Chancecard(1,"Ryk frem til ”START”.",2);
-		Chancecard chance31 = new Chancecard(1,"Ryk frem til ”START”.",2);
-		Chancecard chance32 = new Chancecard(12,"Ryk frem til Frederiksberg Allé. Hvis de passerer ”START”, indkassér da kr. 4.000",2);
+		Chancecard chance23 = new Chancecard(6,tui.chance23(),2);
+		Chancecard chance24 = new Chancecard(31,tui.chance24(),5);
+		Chancecard chance25 = new Chancecard(31,tui.chance25(),5);
+		Chancecard chance26 = new Chancecard(40,tui.chance26(),2);
+		Chancecard chance27 = new Chancecard(20,tui.chance27(),2); 
+		Chancecard chance28 = new Chancecard(25,tui.chance28(),2);
+		Chancecard chance29 = new Chancecard(33,tui.chance29(),2);
+		Chancecard chance30 = new Chancecard(1,tui.chance30(),2);
+		Chancecard chance31 = new Chancecard(1,tui.chance31(),2);
+		Chancecard chance32 = new Chancecard(12,tui.chance32(),2);
 		
 		
 		// ryk frem eller tilbage
-		Chancecard chance33 = new Chancecard(2,"Ryk 2 felter frem",3);
-		Chancecard chance34 = new Chancecard(-1,"ryk 1 felt tilbage",3);
-		Chancecard chance35 = new Chancecard(5,"ryk 5 frelter frem",3);
-		Chancecard chance36 = new Chancecard(-3,"ryk 3 felter tilbage",3);
-		Chancecard chance37 = new Chancecard(3,"ryk 3 felter frem",3);
-		Chancecard chance38 = new Chancecard(-5,"ryk 5 felter tilbage",3);
-		Chancecard chance39 = new Chancecard(-2,"ryk 2 felter tilbafe",3);
-		Chancecard chance40 = new Chancecard(1,"ryk et felt frem",3);
+		Chancecard chance33 = new Chancecard(2,tui.chance33(),3);
+		Chancecard chance34 = new Chancecard(-1,tui.chance34(),3);
+		Chancecard chance35 = new Chancecard(5,tui.chance35(),3);
+		Chancecard chance36 = new Chancecard(-3,tui.chance36(),3);
+		Chancecard chance37 = new Chancecard(3,tui.chance37(),3);
+		Chancecard chance38 = new Chancecard(-5,tui.chance38(),3);
+		Chancecard chance39 = new Chancecard(-2,tui.chance39(),3);
+		Chancecard chance40 = new Chancecard(1,tui.chance40(),3);
 				
 		// ryk frem til det nærmeste rædderi
 				
-		Chancecard chance41 = new Chancecard(1,"ryk frem til det nærmeste rædderi",4);
-		Chancecard chance42 = new Chancecard(1,"ryk frem til det nærmeste rædderi",4);
+		Chancecard chance41 = new Chancecard(1,tui.chance41(),4);
+		Chancecard chance42 = new Chancecard(1,tui.chance42(),4);
 		
 		//det samlede array
 		chancecards[1]=chance1;
@@ -124,13 +124,14 @@ public int drawCard(){
 	@Override
 	public void landOnField(Player player, int fieldnum, Field field,
 			boolean prison,int drawncard,boolean ownsall) {
+		TUI tui = new TUI();
 		
 
 		switch (chancecards[drawncard].chanceType()) {
 		case 1: // er de chance kort hvor man modtager eller skal betale penge til banken
 
 			int money = chancecards[drawncard].chanceSum();
-			GUI.getUserButtonPressed("du modtager/betaler" + money, "ok");
+			GUI.getUserButtonPressed(tui.modtagbetal() + money, tui.ok());
 			player.getPlayerAcc().changeBalance(money);
 			GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
 			

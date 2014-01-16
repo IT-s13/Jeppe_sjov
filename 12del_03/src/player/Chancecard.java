@@ -1,7 +1,7 @@
 package player;
 
 public class Chancecard {
-	
+	TUI tui = new TUI();
 	private int sum, type;
 	private String description;
 
@@ -25,8 +25,8 @@ public class Chancecard {
 
 	public String toString() {
 		String result;
-		result = "summen er " + sum + " beskrivelsen er " + description
-				+ " typen er " + type;
+		result = tui.summenEr() + sum + tui.beskrivelse() + description
+				+ tui.typen() + type;
 		return result;
 	}
 

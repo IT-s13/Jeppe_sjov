@@ -2,7 +2,6 @@ package player;
 
 public class Account {
 	private int money;
-	private String result;
 TUI tui = new TUI();
 
 	// opretter en konstrukt�r
