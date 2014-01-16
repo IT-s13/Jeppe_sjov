@@ -21,7 +21,7 @@ abstract class Ownable extends Field {
 					tui.buyproperty(), tui.yes(), tui.no());
 			if (choice == true) {
 				if(player.getPlayerAcc().getBalance() > price){
-				player.getPlayerAcc().withdrawMoney(price);
+				player.getPlayerAcc().changeBalance(-price);
 				owner = player;
 				if (field instanceof Fleet) {
 					player.updateFleet();
@@ -41,8 +41,8 @@ abstract class Ownable extends Field {
 		}
 		if (owner != null && owner != player) {
 			if(ownsall==true){
-				owner.getPlayerAcc().depositMoney(getRent()*2);
-				player.getPlayerAcc().withdrawMoney(getRent()*2);
+				owner.getPlayerAcc().changeBalance(getRent()*2);
+				player.getPlayerAcc().changeBalance(-getRent()*2);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 						.getBalance());
 				GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()
@@ -51,8 +51,8 @@ abstract class Ownable extends Field {
 						+ tui.mustPay() + getRent(), tui.ok());
 				
 			}
-			owner.getPlayerAcc().depositMoney(getRent());
-			player.getPlayerAcc().withdrawMoney(getRent());
+			owner.getPlayerAcc().changeBalance(getRent());
+			player.getPlayerAcc().changeBalance(-getRent());
 			GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 					.getBalance());
 			GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()

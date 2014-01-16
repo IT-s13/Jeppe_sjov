@@ -24,7 +24,7 @@ public class Jail extends Field {
 			if (GUI.getUserLeftButtonPressed(tui.PayorRoll(), " betal 1000",
 					"Roll dice") == true) {
 				GUI.showMessage("du har betalt 1000 og kan rykke videre i næste tur");
-				player.getPlayerAcc().withdrawMoney(bailamount);
+				player.getPlayerAcc().changeBalance(-bailamount);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 						.getBalance());
 				player.restartjailcount();
