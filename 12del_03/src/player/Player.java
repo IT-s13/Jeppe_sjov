@@ -68,7 +68,7 @@ public class Player {
 	public int updateFieldNum(int diceSum){
 		if(fieldNum+diceSum>40){
 			fieldNum=diceSum-(40-fieldNum);
-			balance.depositMoney(4000);
+			balance.changeBalance(4000);
 			GUI.setBalance(name, balance.getBalance());
 			return fieldNum;
 		}

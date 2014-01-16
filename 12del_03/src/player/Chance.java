@@ -131,7 +131,7 @@ public int drawCard(){
 
 			int money = chancecards[drawncard].chanceSum();
 			GUI.getUserButtonPressed("du modtager/betaler" + money, "ok");
-			player.getPlayerAcc().depositMoney(money);
+			player.getPlayerAcc().changeBalance(money);
 			GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
 			
 			break;
@@ -140,7 +140,7 @@ public int drawCard(){
 			GUI.removeCar(player.getFieldNum(), player.getPlayerName());
 
 			if(player.getFieldNum()> chancecards[drawncard].chanceSum()){
-				player.getPlayerAcc().depositMoney(4000);
+				player.getPlayerAcc().changeBalance(4000);
 			}
 			player.setFieldNum(chancecards[drawncard].chanceSum());
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());
@@ -151,7 +151,7 @@ public int drawCard(){
 			int move = chancecards[drawncard].chanceSum();
 			
 			if(player.getFieldNum()+chancecards[drawncard].chanceSum()>40){
-				player.getPlayerAcc().depositMoney(4000);
+				player.getPlayerAcc().changeBalance(4000);
 				player.setFieldNum(player.getFieldNum()+chancecards[drawncard].chanceSum()-40);
 			}
 			else{
@@ -175,7 +175,7 @@ public int drawCard(){
 			}
 			else if (player.getFieldNum()==37){
 				player.setFieldNum(6);
-				player.getPlayerAcc().depositMoney(4000);
+				player.getPlayerAcc().changeBalance(4000);
 			}
 		
 			

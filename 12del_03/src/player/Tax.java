@@ -16,18 +16,18 @@ public class Tax extends Field {
 	public void landOnField(Player player,int fieldnum,Field field, boolean prison,int drawncard,boolean ownsall) {
 		if (taxAmount==4000){
 			if(GUI.getUserLeftButtonPressed(tui.tax(), "4000", "10%")==true){
-				player.getPlayerAcc().withdrawMoney(taxAmount);
+				player.getPlayerAcc().changeBalance(-taxAmount);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
 			}
 			else { 
 				int payment =(player.getPlayerAcc().getBalance()/100)*10;
-				player.getPlayerAcc().withdrawMoney(payment);
+				player.getPlayerAcc().changeBalance(-payment);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
 				
 			}
 		}
 			else {
-				player.getPlayerAcc().withdrawMoney(taxAmount);
+				player.getPlayerAcc().changeBalance(-taxAmount);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
 				
 			}
