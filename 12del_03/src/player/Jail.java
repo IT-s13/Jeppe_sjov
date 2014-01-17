@@ -23,7 +23,7 @@ public class Jail extends Field {
 		if (player.getJailcount() < 3 && prison == true) {
 
 			if (GUI.getUserLeftButtonPressed(tui.PayorRoll(), tui.jailBetal(),
-					tui.rollDice(player.getPlayerName())) == true) {
+					tui.rollDice()) == true) {
 				GUI.showMessage(tui.jailBetal());
 				player.getPlayerAcc().changeBalance(-bailamount);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
@@ -32,7 +32,7 @@ public class Jail extends Field {
 				player.setJailstate(false);
 			} else {
 				for (int i = 0; i <= 3; i++) {
-					GUI.getUserButtonPressed(" ", tui.rollDice(player.getPlayerName()));
+					GUI.getUserButtonPressed(" ", tui.rollDice());
 					diceCup.roll();
 					if (diceCup.getfacevalue1() == diceCup.getfacevalue2()) {
 						player.setJailstate(false);

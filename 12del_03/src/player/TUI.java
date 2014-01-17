@@ -11,11 +11,14 @@ public class TUI {
 		return result;
 	}
 
-	public String rollDice(String playerName) {
+	public String rollDiceName(String playerName) {
 		result = "It is " + playerName
-				+ "'s turn. Press the button to roll the dice";
+				+ "'s turn. Press the button to roll the dice!";
 		return result;
-
+	}
+		public String rollDice() {
+			result =  "Press the button to roll the dice";
+			return result;
 	}
 
 	public String currentBalance() {
@@ -65,7 +68,7 @@ public class TUI {
 	}
 
 	public String mustPay() {
-		result = "you must pay: ";
+		result = " you must pay: ";
 		return result;
 	}
 
@@ -91,11 +94,6 @@ public class TUI {
 
 	public String landOnTax() {
 		result = "you landed on the tax field and you pay";
-		return result;
-	}
-
-	public String buttondice() {
-		result = "Roll dice";
 		return result;
 	}
 
@@ -357,7 +355,7 @@ public class TUI {
 	}
 
 	public String modtagbetal() {
-		result = "du modtager/betaler";
+		result = "Følgende er ændringere på deres konto: ";
 		return result;
 
 	}
