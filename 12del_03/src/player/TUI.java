@@ -7,38 +7,38 @@ public class TUI {
 	}
 
 	public String Winner() {
-		result = "The winner is: ";
+		result = "Vinderen er: ";
 		return result;
 	}
 
 	public String rollDiceName(String playerName) {
-		result = "It is " + playerName
-				+ "'s turn. Press the button to roll the dice!";
+		result = "Det er " + playerName
+				+ "'s tur. Tryk på knappen for at rulle med terningerne!";
 		return result;
 	}
 		public String rollDice() {
-			result =  "Press the button to roll the dice";
+			result =  "Tryk på knappen for at rulle med terningerne";
 			return result;
 	}
 
 	public String currentBalance() {
-		result = " Actual balance is ";
+		result = " Den aktuelle kontobeholdning ";
 		return result;
 
 	}
 
 	public String numberOfPlayers() {
-		result = "Enter the number of players, from 1 to 6";
+		result = "Indtast antal af spillere fra 2 til 6";
 		return result;
 	}
 
 	public String enterName() {
-		result = "Enter your name player ";
+		result = "Indtast spillerens navn ";
 		return result;
 	}
 
 	public String cantAfford() {
-		result = "You can't afford this property";
+		result = "Du har ikke råd til at købe denne ejendom";
 		return result;
 	}
 
@@ -48,32 +48,32 @@ public class TUI {
 	}
 
 	public String buyproperty() {
-		result = "Do you want to buy this property?  The price is: ";
+		result = "Vil du købe denne ejendom?  Prisen er: ";
 		return result;
 	}
 
 	public String yes() {
-		result = "yes";
+		result = "ja";
 		return result;
 	}
 
 	public String no() {
-		result = "no";
+		result = "nej";
 		return result;
 	}
 
 	public String theOwneris() {
-		result = "The owner is: ";
+		result = "Ejeren af denne ejendom er: ";
 		return result;
 	}
 
 	public String mustPay() {
-		result = " you must pay: ";
+		result = " Du skal betale: ";
 		return result;
 	}
 
 	public String thePriceis() {
-		result = "The price is: ";
+		result = "Prisen er: ";
 		return result;
 	}
 
@@ -83,22 +83,22 @@ public class TUI {
 	}
 
 	public String refugeField() {
-		result = "you landed on the refuge field and you recieve ";
+		result = "Du landede på Helle og modtager: ";
 		return result;
 	}
 
 	public String tax() {
-		result = "do you want to pay 4000 or 10% of total assets";
+		result = "Vil du betale 4000 kr eller 10% af alle dine aktiver ";
 		return result;
 	}
 
 	public String landOnTax() {
-		result = "you landed on the tax field and you pay";
+		result = "Du landede på skatte felter og skal betale ";
 		return result;
 	}
 
 	public String PayorRoll() {
-		result = "do you want to pay 1000 or roll the dice";
+		result = "Vil du betale 1000 kr eller kaste med terningerne?";
 		return result;
 	}
 
@@ -259,7 +259,7 @@ public class TUI {
 	}
 
 	public String chance27() {
-		result = "ryk frem til strandveje, modtag kr.4.000 hvis de passerer start";
+		result = "ryk frem til strandvejen, modtag kr.4.000 hvis de passerer start";
 		return result;
 
 	}

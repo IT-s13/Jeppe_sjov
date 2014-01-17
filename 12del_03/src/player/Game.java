@@ -59,7 +59,7 @@ GUI.create("Fields1.txt");
 			}
 			if (player[i].getPlayerAcc().getBalance() <= 0) {
 				GUI.removeAllCars(player[i].getPlayerName());
-				for (int u = 1; u <= 41; u++) {
+				for (int u = 1; u <= 40; u++) {
 					Field field = gameBoard.getField(u);
 					if (field instanceof Ownable) {
 						field.releaseFields(player[i]);
@@ -100,7 +100,7 @@ GUI.create("Fields1.txt");
 
 			Player Player = new Player(
 					GUI.getUserString(tui.enterName()),
-					player_Account, 0);
+					player_Account, 1);
 			player[i] = Player;
 			GUI.addPlayer(player[i].getPlayerName(), player[i].getPlayerAcc()
 					.getBalance());
