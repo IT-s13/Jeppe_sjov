@@ -14,7 +14,7 @@ public class Jail extends Field {
 	}
 
 	public void landOnField(Player player, int fieldnum, Field field,
-			boolean prison, int drawncard, boolean ownsall) {
+			boolean prison, int drawncard, boolean ownsall,Field[] array) {
 		if (fieldnum == 31) {
 			player.setFieldNum(11);
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());

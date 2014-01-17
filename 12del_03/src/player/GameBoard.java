@@ -124,5 +124,31 @@ public class GameBoard {
 		}
 
 	}
+	
+	public Field[] getArray(int fieldnumber, Player player){
+		
+		String currentType=fields[fieldnumber].getType(); 
+		int typeCounter=0; 
+		for (int i=1;i<=fields.length-1;i++){
+			
+			if(currentType==fields[i].getType()){
+				typeCounter++; 
+			}
+		}
+		
+		Field[] array = new Field[typeCounter]; 
+		
+		for (int i=1; i<=fields.length-1;i++){
+			int u=0;
+			if(fields[i].getType()==currentType && fields[i].getOwner()==player){
+				array[u]=fields[i]; 
+				u++;
+			}
+				
+		}
+		return array; 
+		
+	}
+	
 
 }

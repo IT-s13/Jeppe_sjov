@@ -5,7 +5,7 @@ public class Home extends Field {
 
 	@Override
 	public void landOnField(Player player, int fieldnum, Field field,
-			boolean prison,int drawncard,boolean ownsall) {
+			boolean prison,int drawncard,boolean ownsall,Field[] array) {
 		// TODO Auto-generated method stub
 		
 		

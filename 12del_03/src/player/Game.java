@@ -32,15 +32,17 @@ GUI.create("Fields1.txt");
 		
 		int i = 0, count = 0, counter = 0;
 		while (i <= a) {
+			Field[] propArray=gameBoard.getArray(player[i].getFieldNum(), player[i]);
+			
 			int drawncard=chance.drawCard();
-//			boolean ownsall = gameBoard.ownsall(player[i].getFieldNum(), player[i]);
+			boolean ownsall = gameBoard.ownsall(player[i].getFieldNum(), player[i]);
 			if (player[i].getPlayerAcc().getBalance() > 0) {
 				GUI.getUserButtonPressed("", tui.rollDiceName(player[i].getPlayerName()));
 				diceCup.roll();
 				if(player[i].getJailstate()==true){
 					gameBoard.getField(player[i].getFieldNum()).landOnField(
 							player[i], player[i].getFieldNum(),
-							gameBoard.getField(player[i].getFieldNum()),player[i].getJailstate(),drawncard,false);
+							gameBoard.getField(player[i].getFieldNum()),player[i].getJailstate(),drawncard,ownsall,propArray);
 				}
 				else {
 
@@ -53,7 +55,7 @@ GUI.create("Fields1.txt");
 				}
 				gameBoard.getField(player[i].getFieldNum()).landOnField(
 						player[i], player[i].getFieldNum(),
-						gameBoard.getField(player[i].getFieldNum()),player[i].getJailstate(),drawncard,false);
+						gameBoard.getField(player[i].getFieldNum()),player[i].getJailstate(),drawncard,ownsall,propArray);
 
 			}
 			}

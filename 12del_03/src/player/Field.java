@@ -11,7 +11,7 @@ public abstract class Field {
 
 	}
 	
-	public abstract void landOnField(Player player,int fieldnum,Field field,boolean prison,int drawncard,boolean ownsall);
+	public abstract void landOnField(Player player,int fieldnum,Field field,boolean prison,int drawncard,boolean ownsall,Field[] array);
 
 	public abstract void releaseFields(Player player);
 

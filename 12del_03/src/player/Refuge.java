@@ -9,7 +9,7 @@ public class Refuge extends Field {
 	}
 
 	@Override
-	public void landOnField(Player player, int fieldnum,Field field,boolean prison,int drawncard,boolean ownsall) {
+	public void landOnField(Player player, int fieldnum,Field field,boolean prison,int drawncard,boolean ownsall,Field[] array) {
 		
 		player.getPlayerAcc().changeBalance(this.bonus);
 		GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());

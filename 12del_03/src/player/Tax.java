@@ -13,7 +13,7 @@ public class Tax extends Field {
 	}
 
 	@Override
-	public void landOnField(Player player,int fieldnum,Field field, boolean prison,int drawncard,boolean ownsall) {
+	public void landOnField(Player player,int fieldnum,Field field, boolean prison,int drawncard,boolean ownsall,Field[] array) {
 		if (taxAmount==4000){
 			if(GUI.getUserLeftButtonPressed(tui.tax(), "4000", "10%")==true){
 				player.getPlayerAcc().changeBalance(-taxAmount);

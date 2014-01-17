@@ -123,7 +123,7 @@ public int drawCard(){
 
 	@Override
 	public void landOnField(Player player, int fieldnum, Field field,
-			boolean prison,int drawncard,boolean ownsall) {
+			boolean prison,int drawncard,boolean ownsall,Field[] array) {
 		TUI tui = new TUI();
 		
 
