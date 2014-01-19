@@ -36,5 +36,29 @@ public class Brewery extends Ownable {
 		return null;
 	}
 
+	@Override
+	public int getHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int upHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHousePrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHouseRent(int houseCount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 }

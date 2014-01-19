@@ -14,8 +14,9 @@ public class Jail extends Field {
 	}
 
 	public void landOnField(Player player, int fieldnum, Field field,
-			boolean prison, int drawncard, boolean ownsall,Field[] array) {
+			boolean prison, int drawncard, boolean ownsall) {
 		if (fieldnum == 31) {
+			GUI.removeAllCars(player.getPlayerName());
 			player.setFieldNum(11);
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());
 		}
@@ -75,6 +76,30 @@ public class Jail extends Field {
 	public Player getOwner() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int upHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHousePrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHouseRent(int houseCount) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

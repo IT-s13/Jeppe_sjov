@@ -14,42 +14,44 @@ abstract class Ownable extends Field {
 	}
 
 	@Override
-	public void landOnField(Player player, int fieldnum, Field field,boolean prison,int drawncard,boolean ownsall,Field[] array) {
+	public void landOnField(Player player, int fieldnum, Field field,
+			boolean prison, int drawncard, boolean ownsall) {
 
 		if (owner == null) {
-			boolean choice = GUI.getUserLeftButtonPressed(
-					tui.buyproperty(), tui.yes(), tui.no());
+			boolean choice = GUI.getUserLeftButtonPressed(tui.buyproperty(),
+					tui.yes(), tui.no());
 			if (choice == true) {
-				if(player.getPlayerAcc().getBalance() > price){
-				player.getPlayerAcc().changeBalance(-price);
-				owner = player;
-				if (field instanceof Fleet) {
-					player.updateFleet();
-				}
-				if (field instanceof Brewery) {
-					owner.updateLabor();
-				}
-				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
-						.getBalance());
-				GUI.setOwner(fieldnum, player.getPlayerName());}
-				else {
+				if (player.getPlayerAcc().getBalance() > price) {
+					player.getPlayerAcc().changeBalance(-price);
+					owner = player;
+					if (field instanceof Fleet) {
+						player.updateFleet();
+					}
+					if (field instanceof Brewery) {
+						owner.updateLabor();
+					}
+					GUI.setBalance(player.getPlayerName(), player
+							.getPlayerAcc().getBalance());
+					GUI.setOwner(fieldnum, player.getPlayerName());
+				} else {
 					GUI.showMessage(tui.cantAfford());
-					
+
 				}
 			}
 
 		}
 		if (owner != null && owner != player) {
-			if(ownsall==true){
-				owner.getPlayerAcc().changeBalance(getRent()*2);
-				player.getPlayerAcc().changeBalance(-getRent()*2);
+			if (ownsall == true) {
+				owner.getPlayerAcc().changeBalance(getRent() * 2);
+				player.getPlayerAcc().changeBalance(-getRent() * 2);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 						.getBalance());
 				GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()
 						.getBalance());
-				GUI.getUserButtonPressed(tui.theOwneris() + owner.getPlayerName()
-						+ tui.mustPay() + getRent(), tui.ok());
-				
+				GUI.getUserButtonPressed(
+						tui.theOwneris() + owner.getPlayerName()
+								+ tui.mustPay() + getRent(), tui.ok());
+
 			}
 			owner.getPlayerAcc().changeBalance(getRent());
 			player.getPlayerAcc().changeBalance(-getRent());
@@ -73,11 +75,19 @@ abstract class Ownable extends Field {
 
 	}
 
+	public abstract int getHouseCount();
+
+	public abstract int upHouseCount();
+
+	public abstract int getHousePrice();
+
+	public abstract int getHouseRent(int houseCount);
+
 	public abstract int getRent();
 
 	public String toString() {
 		String result;
-		result = tui.thePriceis()  + price + tui.theOwneris() + owner;
+		result = tui.thePriceis() + price + tui.theOwneris() + owner;
 		return result;
 
 	}

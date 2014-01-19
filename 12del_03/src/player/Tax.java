@@ -13,7 +13,7 @@ public class Tax extends Field {
 	}
 
 	@Override
-	public void landOnField(Player player,int fieldnum,Field field, boolean prison,int drawncard,boolean ownsall,Field[] array) {
+	public void landOnField(Player player,int fieldnum,Field field, boolean prison,int drawncard,boolean ownsall) {
 		if (taxAmount==4000){
 			if(GUI.getUserLeftButtonPressed(tui.tax(), "4000", "10%")==true){
 				player.getPlayerAcc().changeBalance(-taxAmount);
@@ -55,6 +55,30 @@ public class Tax extends Field {
 	public Player getOwner() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int upHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHousePrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHouseRent(int houseCount) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

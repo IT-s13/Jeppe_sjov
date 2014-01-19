@@ -384,7 +384,7 @@ public class TUI {
 	}
 
 	public String jailBetal() {
-		result = "betal 1000";
+		result = "Du betaler 1000";
 		return result;
 
 	}

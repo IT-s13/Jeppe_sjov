@@ -9,7 +9,7 @@ public class Refuge extends Field {
 	}
 
 	@Override
-	public void landOnField(Player player, int fieldnum,Field field,boolean prison,int drawncard,boolean ownsall,Field[] array) {
+	public void landOnField(Player player, int fieldnum,Field field,boolean prison,int drawncard,boolean ownsall) {
 		
 		player.getPlayerAcc().changeBalance(this.bonus);
 		GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
@@ -40,6 +40,30 @@ public class Refuge extends Field {
 	public Player getOwner() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int upHouseCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHousePrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHouseRent(int houseCount) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
