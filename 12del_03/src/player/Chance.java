@@ -150,6 +150,9 @@ public class Chance extends Field {
 				// eller tilbage
 			int move = chancecards[drawncard].chanceSum();
 			GUI.removeAllCars(player.getPlayerName());
+			if(player.getFieldNum()+chancecards[drawncard].chanceSum()<40){
+				player.setFieldNum(38);
+			}
 
 			if (player.getFieldNum() + chancecards[drawncard].chanceSum() > 40) {
 				player.getPlayerAcc().changeBalance(4000);

@@ -18,7 +18,7 @@ abstract class Ownable extends Field {
 			boolean prison, int drawncard, boolean ownsall) {
 
 		if (owner == null) {
-			boolean choice = GUI.getUserLeftButtonPressed(tui.buyproperty(),
+			boolean choice = GUI.getUserLeftButtonPressed(tui.buyproperty()+ price,
 					tui.yes(), tui.no());
 			if (choice == true) {
 				if (player.getPlayerAcc().getBalance() > price) {
