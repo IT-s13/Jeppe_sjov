@@ -129,7 +129,7 @@ public class GameBoard {
 		currentType = fields[fieldnumber].getType();
 		currentOwner = fields[fieldnumber].getOwner();
 		System.out.println(currentType);
-		;
+
 		System.out.println(currentOwner);
 
 		for (int i = 1; i <= 40; i++) {
@@ -144,12 +144,15 @@ public class GameBoard {
 			if (fields[i] instanceof Territory
 					&& fields[i].getType() == currentType
 					&& fields[i].getOwner() == currentOwner
+					&& fields[i].getOwner() != null
 					&& fields[i].getType() != null) {
 				ownerCounter++;
 				System.out.println(" ownerCounter " + ownerCounter);
 			}
 		}
-		if (ownerCounter == typeCounter && player == currentOwner) {
+		if (ownerCounter == typeCounter
+				&& fields[fieldnumber] instanceof Territory
+				&& currentOwner==player) {
 
 			return true;
 		} else {
@@ -169,57 +172,70 @@ public class GameBoard {
 						"hvilken grund vil du bygge et hus på?", "grund 1",
 						"grund 2");
 				if (choice == "grund 1") {
-					array[0].upHouseCount();
-					player.getPlayerAcc().changeBalance(
-							-array[0].getHousePrice());
-					GUI.setBalance(player.getPlayerName(), player
-							.getPlayerAcc().getBalance());
+					if (array[0].getHouseCount() < 5) {
+						array[0].upHouseCount();
+						player.getPlayerAcc().changeBalance(
+								-array[0].getHousePrice());
+						GUI.setBalance(player.getPlayerName(), player
+								.getPlayerAcc().getBalance());
+					}
 				} else if (choice == "grund 2") {
-					array[1].upHouseCount();
-					player.getPlayerAcc().changeBalance(
-							-array[1].getHousePrice());
-					GUI.setBalance(player.getPlayerName(), player
-							.getPlayerAcc().getBalance());
+					if (array[1].getHouseCount() < 5) {
+						array[1].upHouseCount();
+						player.getPlayerAcc().changeBalance(
+								-array[1].getHousePrice());
+						GUI.setBalance(player.getPlayerName(), player
+								.getPlayerAcc().getBalance());
+					}
 				}
 			} else if (array.length == 3) {
 				String choice = GUI.getUserButtonPressed(
 						"hvilken grund vil du bygge et hus på?", "grund 1",
 						"grund 2", "grund 3");
 				if (choice == "grund 1") {
-					array[0].upHouseCount();
-					player.getPlayerAcc().changeBalance(
-							-array[0].getHousePrice());
-					GUI.setBalance(player.getPlayerName(), player
-							.getPlayerAcc().getBalance());
+					if (array[0].getHouseCount() < 5) {
+
+						array[0].upHouseCount();
+						player.getPlayerAcc().changeBalance(
+								-array[0].getHousePrice());
+						GUI.setBalance(player.getPlayerName(), player
+								.getPlayerAcc().getBalance());
+					}
 				}
 				if (choice == "grund 2") {
-					array[1].upHouseCount();
-					player.getPlayerAcc().changeBalance(
-							-array[1].getHousePrice());
-					GUI.setBalance(player.getPlayerName(), player
-							.getPlayerAcc().getBalance());
+					if (array[1].getHouseCount() < 5) {
+
+						array[1].upHouseCount();
+						player.getPlayerAcc().changeBalance(
+								-array[1].getHousePrice());
+						GUI.setBalance(player.getPlayerName(), player
+								.getPlayerAcc().getBalance());
+					}
 				}
 				if (choice == "grund 3") {
-					array[2].upHouseCount();
-					player.getPlayerAcc().changeBalance(
-							-array[2].getHousePrice());
-					GUI.setBalance(player.getPlayerName(), player
-							.getPlayerAcc().getBalance());
+					if (array[2].getHouseCount() < 5) {
 
+						array[2].upHouseCount();
+						player.getPlayerAcc().changeBalance(
+								-array[2].getHousePrice());
+						GUI.setBalance(player.getPlayerName(), player
+								.getPlayerAcc().getBalance());
+					}
 				}
 
 			}
+
 			choice1 = GUI.getUserLeftButtonPressed(
 					"ønsker de at købe et hus mere?", "ja", "nej");
 			for (int i = 1; i <= fields.length - 1; i++) {
 				if (fields[i] instanceof Territory) {
 					GUI.setHouses(i, fields[i].getHouseCount());
-
+					if (fields[i].getHouseCount() == 5) {
+						GUI.setHotel(i, true);
+					}
 				}
-
 			}
 		}
-
 	}
 
 	private Field[] getArray(int fieldnumber, Player player) {

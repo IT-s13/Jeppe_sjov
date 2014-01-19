@@ -53,7 +53,7 @@ public class Chance extends Field {
 		Chancecard chance33 = new Chancecard(2, tui.chance33(), 3);
 		Chancecard chance34 = new Chancecard(-1, tui.chance34(), 3);
 		Chancecard chance35 = new Chancecard(5, tui.chance35(), 3);
-		Chancecard chance36 = new Chancecard(-3, tui.chance36(), 3);
+		Chancecard chance36 = new Chancecard(-2, tui.chance36(), 3);
 		Chancecard chance37 = new Chancecard(3, tui.chance37(), 3);
 		Chancecard chance38 = new Chancecard(-5, tui.chance38(), 3);
 		Chancecard chance39 = new Chancecard(-2, tui.chance39(), 3);
@@ -139,9 +139,11 @@ public class Chance extends Field {
 
 			if (player.getFieldNum() > chancecards[drawncard].chanceSum()) {
 				player.getPlayerAcc().changeBalance(4000);
+				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
 			}
 			player.setFieldNum(chancecards[drawncard].chanceSum());
-			GUI.getUserButtonPressed(chancecards[fieldnum].chanceDesc(), "ok");
+			GUI.getUserButtonPressed(chancecards[fieldnum].chanceDesc(), tui.ok());
+			GUI.removeAllCars(player.getPlayerName());
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());
 
 			break;
@@ -149,24 +151,25 @@ public class Chance extends Field {
 		case 3: // er de chancekort hvor man skal flytte nogle få felter frem
 				// eller tilbage
 			int move = chancecards[drawncard].chanceSum();
-			GUI.removeAllCars(player.getPlayerName());
-			if(player.getFieldNum()+chancecards[drawncard].chanceSum()<40){
-				player.setFieldNum(38);
-			}
-
-			if (player.getFieldNum() + chancecards[drawncard].chanceSum() > 40) {
+			GUI.getUserButtonPressed(chancecards[drawncard].chanceDesc(), tui.ok());
+			if (player.getFieldNum() + move > 40) {
 				player.getPlayerAcc().changeBalance(4000);
 				player.setFieldNum(player.getFieldNum()
-						+ chancecards[drawncard].chanceSum() - 40);
-			} else {
+						+ move - 40);
+			} 
+			else if (player.getFieldNum() + move < 1){
+				player.setFieldNum(player.getFieldNum()+move+40);
+				 
+			}
+			else {
 				player.setFieldNum(player.getFieldNum() + move);
 			}
+			GUI.removeAllCars(player.getPlayerName());
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());
 			
 			break;
 
 		case 4: // er det kort hvor man skal rykke frem til det nærmeste rædderi
-			GUI.removeAllCars(player.getPlayerName());
 			if (player.getFieldNum() == 3) {
 				player.setFieldNum(6);
 			} else if (player.getFieldNum() == 8) {
@@ -179,10 +182,13 @@ public class Chance extends Field {
 				player.setFieldNum(6);
 				player.getPlayerAcc().changeBalance(4000);
 			}
+			GUI.getUserButtonPressed(chancecards[drawncard].chanceDesc(), tui.ok());
+			GUI.removeAllCars(player.getPlayerName());
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());
 			break;
 
 		case 5:
+			GUI.getUserButtonPressed(chancecards[drawncard].chanceDesc(), tui.ok());
 			GUI.removeAllCars(player.getPlayerName());
 			player.setJailstate(true);
 			player.setFieldNum(11);

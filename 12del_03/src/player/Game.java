@@ -59,6 +59,7 @@ public class Game {
 
 				}
 				ownsall = gameBoard.ownsall(player[i].getFieldNum(), player[i]);
+				System.out.println(ownsall);
 				if (ownsall == true) {
 					gameBoard.buyHouse(player[i]);
 				}

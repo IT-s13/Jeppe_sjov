@@ -18,8 +18,8 @@ abstract class Ownable extends Field {
 			boolean prison, int drawncard, boolean ownsall) {
 
 		if (owner == null) {
-			boolean choice = GUI.getUserLeftButtonPressed(tui.buyproperty()+ price,
-					tui.yes(), tui.no());
+			boolean choice = GUI.getUserLeftButtonPressed(tui.buyproperty()
+					+ price, tui.yes(), tui.no());
 			if (choice == true) {
 				if (player.getPlayerAcc().getBalance() > price) {
 					player.getPlayerAcc().changeBalance(-price);
@@ -42,8 +42,36 @@ abstract class Ownable extends Field {
 		}
 		if (owner != null && owner != player) {
 			if (ownsall == true) {
-				owner.getPlayerAcc().changeBalance(getRent() * 2);
-				player.getPlayerAcc().changeBalance(-getRent() * 2);
+				if (getHouseCount() > 0) {
+					owner.getPlayerAcc().changeBalance(
+							getHouseRent(getHouseCount()));
+					player.getPlayerAcc().changeBalance(
+							-getHouseRent(getHouseCount()));
+					GUI.setBalance(player.getPlayerName(), player
+							.getPlayerAcc().getBalance());
+					GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()
+							.getBalance());
+					GUI.getUserButtonPressed(
+							tui.theOwneris() + owner.getPlayerName()
+									+ tui.mustPay()
+									+ getHouseRent(getHouseCount()), tui.ok());
+				}
+
+				else {
+					owner.getPlayerAcc().changeBalance(getRent() * 2);
+					player.getPlayerAcc().changeBalance(-getRent() * 2);
+					GUI.setBalance(player.getPlayerName(), player
+							.getPlayerAcc().getBalance());
+					GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()
+							.getBalance());
+					GUI.getUserButtonPressed(
+							tui.theOwneris() + owner.getPlayerName()
+									+ tui.mustPay() + getRent(), tui.ok());
+				}
+			} 
+			else {
+				owner.getPlayerAcc().changeBalance(getRent());
+				player.getPlayerAcc().changeBalance(-getRent());
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 						.getBalance());
 				GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()
@@ -51,17 +79,7 @@ abstract class Ownable extends Field {
 				GUI.getUserButtonPressed(
 						tui.theOwneris() + owner.getPlayerName()
 								+ tui.mustPay() + getRent(), tui.ok());
-
 			}
-			owner.getPlayerAcc().changeBalance(getRent());
-			player.getPlayerAcc().changeBalance(-getRent());
-			GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
-					.getBalance());
-			GUI.setBalance(owner.getPlayerName(), owner.getPlayerAcc()
-					.getBalance());
-			GUI.getUserButtonPressed(tui.theOwneris() + owner.getPlayerName()
-					+ tui.mustPay() + getRent(), tui.ok());
-
 		}
 
 	}

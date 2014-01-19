@@ -98,24 +98,24 @@ public class TUI {
 	}
 
 	public String PayorRoll() {
-		result = "Vil du betale 1000 kr eller kaste med terningerne?";
+		result = "Vil du betale kr. 1000, for at blive løsladt med det samme eller føler du dig heldig og vil prøve at rulle 2 ens på 3 terningekast?";
 		return result;
 	}
 
 	public String chance1() {
-		result = "du har smuglet smøger betal 200";
+		result = "Du har smuglet smøger betal 200";
 		return result;
 
 	}
 
 	public String chance2() {
-		result = "betal kr. 3.000 for reparation af Deres vogn";
+		result = "Betal kr. 3.000 for reparation af Deres vogn";
 		return result;
 
 	}
 
 	public String chance3() {
-		result = "betal kr. 3.000 for reparation af Deres vogn";
+		result = "Betal kr. 3.000 for reparation af Deres vogn";
 		return result;
 
 	}
@@ -247,19 +247,19 @@ public class TUI {
 	}
 
 	public String chance25() {
-		result = "Gå i fængsel. Ryk direkte til fængslet, de får ikke penge selvom de passerer start indkasserer de ikke kr.4.000";
+		result = "Gå i fængsel. Ryk direkte til fængslet, selvom de passerer start indkasserer de ikke kr. 4.000";
 		return result;
 
 	}
 
 	public String chance26() {
-		result = "tag ind på rådhuspladsen";
+		result = "Tag ind på rådhuspladsen";
 		return result;
 
 	}
 
 	public String chance27() {
-		result = "ryk frem til strandvejen, modtag kr.4.000 hvis de passerer start";
+		result = "Ryk frem til strandvejen, modtag kr.4.000 hvis de passerer start";
 		return result;
 
 	}
@@ -301,55 +301,55 @@ public class TUI {
 	}
 
 	public String chance34() {
-		result = "ryk 1 felt tilbage";
+		result = "Ryk 1 felt tilbage";
 		return result;
 
 	}
 
 	public String chance35() {
-		result = "ryk 5 frelter frem";
+		result = "Ryk 5 frelter frem";
 		return result;
 
 	}
 
 	public String chance36() {
-		result = "ryk 3 felter tilbage";
+		result = "Ryk 3 felter tilbage";
 		return result;
 
 	}
 
 	public String chance37() {
-		result = "ryk 3 felter frem";
+		result = "Ryk 3 felter frem";
 		return result;
 
 	}
 
 	public String chance38() {
-		result = "ryk 5 felter tilbage";
+		result = "Ryk 5 felter tilbage";
 		return result;
 
 	}
 
 	public String chance39() {
-		result = "ryk 2 felter tilbafe";
+		result = "Ryk 2 felter tilbafe";
 		return result;
 
 	}
 
 	public String chance40() {
-		result = "ryk et felt frem";
+		result = "Ryk et felt frem";
 		return result;
 
 	}
 
 	public String chance41() {
-		result = "ryk frem til det nærmeste rædderi";
+		result = "Ryk frem til det nærmeste rædderi";
 		return result;
 
 	}
 
 	public String chance42() {
-		result = "ryk frem til det nærmeste rædderi";
+		result = "Ryk frem til det nærmeste rædderi";
 		return result;
 
 	}
@@ -361,46 +361,56 @@ public class TUI {
 	}
 
 	public String summenEr() {
-		result = "summen er";
+		result = "Summen er";
 		return result;
 	}
 
 	public String beskrivelse() {
-		result = "beskrivelsen er";
+		result = "Beskrivelsen er";
 		return result;
 
 	}
 
 	public String typen() {
-		result = "typen er";
+		result = "Typen er";
 		return result;
 
 	}
 
 	public String jailBetalt() {
-		result = "du har betalt 1000 og kan rykke videre i næste tur";
+		result = "Du har betalt 1000 og kan rykke videre i næste tur";
 		return result;
 
 	}
 
 	public String jailBetal() {
-		result = "Du betaler 1000";
+		result = "Jeg vil betale kr. 1000";
+		return result;
+
+	}
+	public String ryktilFængsel() {
+		result = "Ryk direkte i fængsel!";
+		return result;
+
+	}
+	public String choiceRoll() {
+		result = "Jeg vil rulle med terningerne";
 		return result;
 
 	}
 
 	public String slogToEns() {
-		result = "du slog 2 ens og kan rykke videre i næste runde";
+		result = "Tillykke, du slog 2 ens og kan rykke videre i næste runde!";
 		return result;
 	}
 
 	public String slogikkeToEns() {
-		result = "du slog ikke 2 ens men har slået 3 gange,du må prøve igen i næste runde";
+		result = "Du slog ikke 2 ens men har slået 3 gange,du må prøve igen i næste runde";
 		return result;
 	}
 
 	public String prøvigen() {
-		result = "du slog ikke 2 ens du må prøve igen";
+		result = "Du slog ikke 2 ens, prøv igen";
 		return result;
 	}
 

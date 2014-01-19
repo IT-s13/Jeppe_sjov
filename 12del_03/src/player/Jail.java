@@ -16,33 +16,38 @@ public class Jail extends Field {
 	public void landOnField(Player player, int fieldnum, Field field,
 			boolean prison, int drawncard, boolean ownsall) {
 		if (fieldnum == 31) {
+			GUI.getUserButtonPressed(tui.ryktilFængsel(), tui.ok());
 			GUI.removeAllCars(player.getPlayerName());
 			player.setFieldNum(11);
 			GUI.setCar(player.getFieldNum(), player.getPlayerName());
 		}
 
-		if (player.getJailcount() < 3 && prison == true) {
+		if (player.getJailcount() <= 3 && prison == true) {
 
 			if (GUI.getUserLeftButtonPressed(tui.PayorRoll(), tui.jailBetal(),
-					tui.rollDice()) == true) {
-				GUI.showMessage(tui.jailBetal());
+					tui.choiceRoll()) == true) {
+				GUI.showMessage(tui.jailBetalt());
 				player.getPlayerAcc().changeBalance(-bailamount);
 				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc()
 						.getBalance());
 				player.restartjailcount();
 				player.setJailstate(false);
 			} else {
-				for (int i = 0; i <= 3; i++) {
+				
+				for (int i = 1; i <= 3; i++) {
 					GUI.getUserButtonPressed(" ", tui.rollDice());
 					diceCup.roll();
+					
 					if (diceCup.getfacevalue1() == diceCup.getfacevalue2()) {
-						player.setJailstate(false);
-						player.restartjailcount();
-						i = 4;
 						GUI.getUserButtonPressed(
 								tui.slogToEns(),
 								tui.ok());
-					} else {
+						player.setJailstate(false);
+						player.restartjailcount();
+						i = 4;	
+					} 
+					
+					else {
 						player.updatejailcount();
 						if (i == 3) {
 							GUI.getUserButtonPressed(
