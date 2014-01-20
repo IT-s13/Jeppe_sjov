@@ -152,7 +152,7 @@ public class GameBoard {
 		}
 		if (ownerCounter == typeCounter
 				&& fields[fieldnumber] instanceof Territory
-				&& currentOwner==player) {
+				) {
 
 			return true;
 		} else {
